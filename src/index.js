@@ -13,6 +13,13 @@ const client = new ApolloClient({
     const body = JSON.parse(options.body)
     // 方便调试
     return fetch(`${uri}?query=${body.operationName || ''}`, options) 
+  },
+  request (operation) {
+    operation.setContext({
+      headers: {
+        Authorization: `Bearer ${localStorage.token || ''}`
+      }
+    })
   }
 });
 
