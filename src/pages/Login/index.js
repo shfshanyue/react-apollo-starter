@@ -42,8 +42,20 @@ class Login extends Component {
           this.state.error &&
           <div className="login-error">{this.state.error}</div>
         }
-        <input className="login-input" placeholder="Name" onChange={e => this.setState({ username: e.target.value })} autoFocus />
-        <input className="login-input" type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value})} />
+        <input
+          className="login-input"
+          placeholder="Name"
+          onChange={e => this.setState({ username: e.target.value })}
+          value={this.state.username}
+          autoFocus
+        />
+        <input
+          className="login-input"
+          type="password"
+          placeholder="Password"
+          onChange={e => this.setState({ password: e.target.value})}
+          value={this.state.password}
+        />
         <div className="login-button" onClick={this.handleSubmit}>Login</div>
       </div>
     )

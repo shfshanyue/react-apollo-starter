@@ -17,6 +17,15 @@ query TODOS {
   }  
 }
 
-query CREATE_TODO {
-  
+mutation CREATE_TODO ($todo: TodoCreate!) {
+  createTodo (todo: $todo) {
+    id
+    name
+    status
+    createTime
+  }
+}
+
+mutation UPDATE_TODO ($todo: TodoUpdate!) {
+  updateTodo (todo: $todo)  
 }
