@@ -1,4 +1,17 @@
-.App {
+.app {
   text-align: center;
 }
 
+.app .app-list {
+  display: flex;
+}
+
+.app .app-item {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.app .app-container {
+  display: flex;
+  justify-content: space-between;
+}
