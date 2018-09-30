@@ -1,3 +1,7 @@
 query PING {
   ping  
 }
+
+mutation CREATE_USER_TOKEN ($name: String!, $password: String!) {
+  createUserToken (name: $name, password: $password)
+}
