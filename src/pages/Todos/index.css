@@ -1,0 +1,13 @@
+.todos {
+
+}
+
+.todos .todos-input {
+  height: 30px;
+  width: 400px;
+  padding-left: 10px;
+}
+
+.todos .todos-input:focus {
+  outline: none;
+}

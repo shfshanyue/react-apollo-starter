@@ -29,6 +29,7 @@ class Login extends Component {
         this.setState({ error: '您输入的账号或者密码有误' })         
       } else {
         this.setState({ error: '' }) 
+        localStorage.token = token
         this.props.history.push('/')
       }
     })

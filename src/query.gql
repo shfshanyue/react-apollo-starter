@@ -5,3 +5,18 @@ query PING {
 mutation CREATE_USER_TOKEN ($name: String!, $password: String!) {
   createUserToken (name: $name, password: $password)
 }
+
+query TODOS {
+  me {
+    todos {
+      id
+      name
+      status
+      createTime
+    }   
+  }  
+}
+
+query CREATE_TODO {
+  
+}
