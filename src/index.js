@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import createHistory from "history/createBrowserHistory"
+import { message } from 'antd';
 
+import 'antd/dist/antd.less';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -19,13 +21,12 @@ const client = new ApolloClient({
   },
   onError ({ response, graphQLErrors }) {
     if (graphQLErrors) {
-      const { message, httpStatus } = graphQLErrors[0]
-      console.log(httpStatus)
+      const { message: msg, httpStatus } = graphQLErrors[0]
+      message.error(msg)
       if (httpStatus === 401) {
         localStorage.clear('token')
         history.push('/')
       } else {
-        console.log(message)
       }
     }
   },
